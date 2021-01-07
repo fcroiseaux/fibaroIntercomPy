@@ -10,7 +10,7 @@ import ssl
 
 if (len(sys.argv) != 4) :
     print("Usage : openDoor.py INTERCOM_ADDR USER PASSWORD")
-    print("Script needd 3 arguments")
+    print("Script needs 3 arguments")
     exit()
 
 
