@@ -45,6 +45,7 @@ jsonToken = json.loads(resp)
 
 token = jsonToken['result']['token']
 
+#Open the Door
 openDoorJson = {
     "jsonrpc": "2.0",
     # Method name
@@ -59,6 +60,23 @@ openDoorJson = {
 
 openReqStr = json.dumps(openDoorJson)
 ws.send(openReqStr)
+
+result = ws.recv()
+
+#Logout
+logoutJson = {
+    "jsonrpc": "2.0",
+    # Method name
+    "method": "com.fibaro.intercom.account.logout",
+    # Parameters
+    "params": {
+        "token": token
+    },
+    "id": "1"
+}
+
+logoutReqStr = json.dumps(logoutJson)
+ws.send(logoutReqStr)
 
 result = ws.recv()
 
