@@ -1,5 +1,4 @@
-# Python script to Open the portal door
-# EG. to integrate in homeassistant
+# Python script to Open the portal door with the command line
 
 
 from websocket import create_connection
